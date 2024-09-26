@@ -1,0 +1,152 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transform: scale(0.94);
+  transform-origin: top left;
+  width: 111.11%; 
+  overflow: hidden;
+}
+
+header, footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #282828;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#generation-counter {
+  font-size: 1.2em;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls label {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #00d1b2;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+  background-color: #00a896;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Grid Styling */
+.game-grid {
+  display: grid;
+  gap: 1px;
+  margin-top: 20px;
+  /* Grid template will be set dynamically in JavaScript */
+}
+
+.game-grid .cell {
+  width: 20px;
+  height: 20px;
+  background-color: #2e2e2e;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.game-grid .cell.alive {
+  background-color: #00d1b2;
+  transform: scale(1.1);
+}
+
+.game-grid .cell:not(.alive) {
+  transform: scale(1);
+}
+
+/* Responsive Cell Size */
+@media (max-width: 800px) {
+  .game-grid .cell {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .game-grid .cell {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+/* Overlay for the Start button */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.95); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it is on top */
+}
+
+/* Start button styling */
+#start-btn {
+  padding: 20px 40px;
+  font-size: 2em;
+  cursor: pointer;
+  background-color: transparent;
+  color: #00d1b2;
+  border: 2px solid #00d1b2;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+#start-btn:hover {
+  background-color: #00d1b2;
+  color: #1e1e1e;
+}
+
+/* Hide overlay when not needed */
+#overlay.hidden {
+  display: none;
+}

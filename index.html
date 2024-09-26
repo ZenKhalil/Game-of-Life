@@ -1,0 +1,41 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conway's Game of Life</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <!-- Overlay with Start Button -->
+  <div id="overlay">
+    <button id="start-btn">Start</button>
+  </div>
+
+  <header>
+    <h1>Conway's Game of Life</h1>
+    <div id="generation-counter">Generation: 0</div>
+  </header>
+
+  <main>
+    <div id="grid-container"></div>
+    <div class="controls">
+      <!-- Existing control buttons -->
+      <button id="clear-btn">Clear Grid</button>
+      <button id="random-btn">Add Random Cells</button>
+      <button id="pause-btn">Pause</button>
+      <label for="speed-range">Speed:</label>
+      <input type="range" id="speed-range" min="50" max="1000" value="200" step="10">
+      <span id="speed-display">200 ms</span> <!-- Added speed display -->
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Game of Life by Mohammed-Zen</p>
+  </footer>
+
+  <!-- Include the modules -->
+  <script type="module" src="controller.js"></script>
+</body>
+</html>
