@@ -150,3 +150,78 @@ button:active {
 #overlay.hidden {
   display: none;
 }
+
+
+/* Styles for Save and Load buttons */
+.controls button, .controls .load-label {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #00d1b2;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls button i, .controls .load-label i {
+  margin-right: 5px;
+}
+
+.controls .load-label {
+  position: relative;
+  overflow: hidden;
+}
+
+.controls .load-label input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+button:hover, .controls .load-label:hover {
+  background-color: #00a896;
+  transform: translateY(-2px);
+}
+
+button:active, .controls .load-label:active {
+  transform: translateY(0);
+}
+/* Patterns style */
+.pattern-selector {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.pattern-selector label {
+  margin-right: 5px;
+  color: #ffffff;
+}
+
+.pattern-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+/* Speed Display Styling */
+#speed-display {
+  margin-left: 10px;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+#speed-range {
+  width: 150px;
+}
