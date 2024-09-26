@@ -63,6 +63,13 @@ export class GameOfLifeView {
     });
   }
 
+  // **New Method: Update Speed Display**
+  updateSpeedDisplay(speed) {
+    const speedDisplay = document.getElementById('speed-display');
+    if (speedDisplay) {
+      speedDisplay.textContent = `${Math.round(speed)} ms`;
+    }
+  }
 
   // Bind pattern selection
   bindPatternSelect(handler) {
@@ -74,20 +81,33 @@ export class GameOfLifeView {
   }
   
 
-  // Bind control buttons
+  // Bind control buttons, including save and load handlers
   bindControls(
     clearHandler,
     randomHandler,
     pauseResumeHandler,
+    speedChangeHandler,
+    saveHandler,
+    loadHandler,
     patternSelectHandler
   ) {
     const clearBtn = document.getElementById('clear-btn');
     const randomBtn = document.getElementById('random-btn');
     const pauseBtn = document.getElementById('pause-btn');
+    const speedRange = document.getElementById('speed-range');
+    const saveBtn = document.getElementById('save-btn');
+    const loadInput = document.getElementById('load-input');
 
     clearBtn.addEventListener('click', clearHandler);
     randomBtn.addEventListener('click', randomHandler);
     pauseBtn.addEventListener('click', pauseResumeHandler);
+    speedRange.addEventListener('input', (event) => {
+      const newSpeed = Number(event.target.value);
+      speedChangeHandler(newSpeed);
+      this.updateSpeedDisplay(speedChangeHandler.getCurrentSpeed ? speedChangeHandler.getCurrentSpeed() : newSpeed);
+    });
+    saveBtn.addEventListener('click', saveHandler);
+    loadInput.addEventListener('change', loadHandler);
 
     // Bind pattern selection
     this.bindPatternSelect(patternSelectHandler);
