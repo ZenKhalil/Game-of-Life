@@ -33,7 +33,7 @@
 
 ## Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://zenkhalil.github.io/Game-of-Life/)
 
 
 ## Installation
