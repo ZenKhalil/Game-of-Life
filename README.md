@@ -1,6 +1,5 @@
 # Conway's Game of Life
 
-![Game of Life Banner](https://raw.githubusercontent.com/yourusername/gol-project/main/banner.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
